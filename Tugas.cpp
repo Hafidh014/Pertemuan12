@@ -32,3 +32,17 @@ public:
     void potongAdmin() override {
     }
 };
+
+class RekeningBRIPremium : public RekeningBank {
+public:
+    RekeningBRIPremium(string nama, double saldo)
+        : RekeningBank(nama, saldo) {}
+
+    void potongAdmin() override {
+        if (saldo > 10000000) {
+            // Bebas biaya admin
+        } else {
+            saldo -= 50000;
+        }
+    }
+};
